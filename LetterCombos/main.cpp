@@ -65,7 +65,7 @@ m_table** init_memo_table(int size) {
 
 int main(int argc, const char * argv[]) {
     
-    //Initialize and set memo table
+    //Initialize size alphabet and number of letters in combo
     int size_a_bet = 26;
     int num_l_in_combo = 7; //Number of letters in combo. m > 1
     
