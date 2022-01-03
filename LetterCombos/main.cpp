@@ -17,8 +17,8 @@ typedef struct memo_table {
 int num_combos(int m, int n, m_table** memo_table) {
     int result = 0;
     
-    //Handle case m is negative
-    if(m < 0) {
+    //Handle cases m < 0 and m > n
+    if(m < 0 || m > n) {
         return result;
     }
     
