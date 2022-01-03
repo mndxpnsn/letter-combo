@@ -22,7 +22,7 @@ int num_combos(int m, int n, m_table** memo_table) {
         return result;
     }
     
-    //Get results from memo table
+    //Get results from memo table if available
     if(memo_table[m][n].is_set) {
         return memo_table[m][n].val;
     }
@@ -32,12 +32,14 @@ int num_combos(int m, int n, m_table** memo_table) {
         return n * (n - 1) / 2;
     }
     
+    //Recursive step
     if(m > 0) {
         for(int p = 1; p <= n; ++p) {
             result = result + num_combos(m - 1, n - p, memo_table);
         }
     }
     
+    //Store results in memo table
     memo_table[m][n].is_set = true;
     memo_table[m][n].val = result;
     
