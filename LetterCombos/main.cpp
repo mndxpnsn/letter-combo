@@ -4,7 +4,7 @@
 //
 //  Created by mndx on 03/01/2022.
 //  Compute the number of m-letter combinations such that
-//  the m-letters in the combination are in alphabetical order.
+//  the m letters in the combination are in alphabetical order.
 //
 
 #include <iostream>
