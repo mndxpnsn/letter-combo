@@ -14,7 +14,7 @@ typedef struct memo_table {
     int val;
 } m_table;
 
-int num_combos(int m, int n, m_table** memo_table) {
+int num_combos_dp(int m, int n, m_table** memo_table) {
     int result = 0;
     
     //Handle cases m < 0 and m > n
@@ -35,7 +35,7 @@ int num_combos(int m, int n, m_table** memo_table) {
     //Recursive step
     if(m > 0) {
         for(int p = 1; p <= n; ++p) {
-            result = result + num_combos(m - 1, n - p, memo_table);
+            result = result + num_combos_dp(m - 1, n - p, memo_table);
         }
     }
     
@@ -63,6 +63,11 @@ m_table** init_memo_table(int size) {
     return memo_table;
 }
 
+int num_combos(int num_l, int size_a_bet, m_table** memo_table) {
+    
+    return num_combos_dp(num_l - 2, size_a_bet, memo_table);
+}
+
 int main(int argc, const char * argv[]) {
     
     //Initialize size alphabet and number of letters in combo
@@ -73,7 +78,7 @@ int main(int argc, const char * argv[]) {
     m_table** memo_table = init_memo_table(size_a_bet);
     
     //Compute number of combinations
-    int num_of_combos = num_combos(num_l_in_combo - 2, size_a_bet, memo_table);
+    int num_of_combos = num_combos(num_l_in_combo, size_a_bet, memo_table);
     
     //Print results
     std::cout << "result: " << num_of_combos << std::endl;
