@@ -72,7 +72,7 @@ int main(int argc, const char * argv[]) {
     
     //Initialize size alphabet and number of letters in combo
     int size_a_bet = 26;
-    int num_l_in_combo = 7; //Number of letters in combo. m > 1
+    int num_l_in_combo = 7; //Number of letters in combo. num_l_in_combo > 1
     
     //Initialize memo table
     m_table** memo_table = init_memo_table(size_a_bet);
