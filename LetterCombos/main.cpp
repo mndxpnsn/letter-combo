@@ -103,7 +103,7 @@ m_table** init_memo_table(int size) {
 }
 
 long num_combos_exc(int num_l, int size_a_bet, m_table** memo_table) {
-    //Computer the number of possible words of size num_l of
+    //Compute the number of possible words of size num_l of
     //alphabet with size size_a_bet where combinations are
     //exclusive, so combinations such as 'aa' are not valid.
     //Letters in the word must be strictly greater than
@@ -118,7 +118,7 @@ long num_combos_exc(int num_l, int size_a_bet, m_table** memo_table) {
 }
 
 long num_combos_inc(int num_l, int size_a_bet, m_table** memo_table) {
-    //Computer the number of possible words of size num_l of
+    //Compute the number of possible words of size num_l of
     //alphabet with size size_a_bet where combinations are
     //inclusive, so combinations such as 'aa' are valid.
     //Letters in the word are greater than or equal to
